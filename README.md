@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/31446094/README.md)[Uploading README# 📈 Vietnam SME Sales Performance Dashboard
+ [README.md] 📈 Vietnam SME Sales Performance Dashboard
 
 > Data Analysis & Business Intelligence Portfolio Project  
 > **Tống Anh Đức** | Business Analyst Intern / Junior  
