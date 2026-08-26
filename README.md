@@ -1,4 +1,4 @@
- [README.md] 📈 Vietnam SME Sales Performance Dashboard
+📈 Vietnam SME Sales Performance Dashboard
 
 > Data Analysis & Business Intelligence Portfolio Project  
 > **Tống Anh Đức** | Business Analyst Intern / Junior  
