@@ -121,7 +121,8 @@ Vietnam-SME-Sales-Dashboard/
 
 ## 🖼️ Dashboard Preview
 
-*(Thêm screenshot tại đây)*
+<img width="2085" height="1479" alt="dashboard_preview" src="https://github.com/user-attachments/assets/88d14160-8316-486e-9e3a-bf9e1700a380" />
+
 
 **Các trang chính đề xuất:**
 1. **Executive Overview** – KPI tổng (Revenue, Orders, AOV, YoY)
