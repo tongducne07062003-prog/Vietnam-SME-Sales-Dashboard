@@ -16,12 +16,15 @@ Mục tiêu: Giúp chủ shop / quản lý nhìn rõ **Doanh thu, AOV, Hiệu su
 
 ### 🎯 Điểm nổi bật
 
-| Chỉ số | Giá trị | Ghi chú |
-|--------|---------|---------|
-| 📦 Số giao dịch | 9.800+ | SME bán lẻ Việt Nam |
-| 🗺️ Phạm vi | Nhiều vùng miền | Bắc – Trung – Nam |
-| 💡 Insight chính | Miền Trung chỉ ~19% | Dù có tiềm năng tăng trưởng |
-| 🛠️ Công cụ | Excel (Power Query), SQL, Tableau Public | Pipeline end-to-end |
+| 📌 Chỉ số | 📈 Giá trị | 📝 Ghi chú |
+|-----------|------------|------------|
+| 📦 Số giao dịch trong sample | **800** | File `sample_sales_data.xlsx` |
+| 💰 Tổng doanh thu (sample) | **≈ 2.53 tỷ VND** | Sum `revenue_vnd` |
+| 🧾 AOV chung | **≈ 3.17 triệu VND** | Doanh thu ÷ số giao dịch |
+| 🗺️ Miền Trung – share doanh thu | **~22.1%** | Thấp nhất 3 miền trên sample |
+| 🎯 Mục tiêu share Trung (nếu đẩy mạnh) | **25–28%** | Kỳ vọng chiến lược, chưa đo sau triển khai |
+| 🛠️ Công cụ | Excel · SQL · Tableau Public | |
+
 
 ---
 
@@ -30,29 +33,31 @@ Mục tiêu: Giúp chủ shop / quản lý nhìn rõ **Doanh thu, AOV, Hiệu su
 Các chủ shop SME thường gặp khó khăn:
 
 1. **Dữ liệu phân tán** (Excel, phần mềm bán hàng, Facebook) → khó nhìn tổng thể.
-2. **Không biết danh mục nào đang “kéo” doanh thu** và danh mục nào đang tồn kho ứ đọng.
+2. **Không biết danh mục nào đang “kéo” doanh thu** và danh mục nào volume thấp hoặc AOV yếu.
 3. **Phân bổ ngân sách marketing** còn cảm tính, chưa dựa trên đóng góp theo vùng miền / kênh.
 4. Thiếu báo cáo ngắn gọn, actionable cho quyết định hàng tuần / hàng tháng.
 
 **Mục tiêu:**  
-Xây dựng **Dashboard hiệu suất bán hàng** + báo cáo Business Insight kèm 3 khuyến nghị hành động rõ ràng.
+Xây dựng dashboard hiệu suất bán hàng và đưa 3 hướng hành động: (1) tăng focus Miền Trung, (2) tối ưu product mix theo AOV/đóng góp, (3) dùng dashboard theo tuần để ra quyết định.
 
 ---
 
-## 🛠️ Công cụ & Công nghệ
+## 🛠️ Công cụ & cách làm
 
-| Công cụ | Mục đích |
-|---------|----------|
-| **Excel + Power Query** | Làm sạch, chuẩn hóa, ETL |
-| **SQL** | Tổng hợp, Window Functions, tính KPI |
-| **Tableau Public** | Dashboard tương tác (Doanh thu, AOV, Vùng, Danh mục) |
-| **PowerPoint / Word** | Báo cáo Business Insight |
+| 🔧 Công cụ | 💡 Dùng để |
+|------------|------------|
+| **Excel (+ Power Query)** | Làm sạch, chuẩn hóa, Pivot KPI |
+| **SQL** | Tổng hợp doanh thu, AOV, share theo chiều cắt |
+| **Tableau Public / chart Excel** | Dashboard theo vùng, danh mục, kênh, thời gian |
 
-**Kỹ thuật chính:**
-- Làm sạch & biến đổi dữ liệu
-- Phân tích theo thời gian (YoY, MoM)
-- Phân tích theo địa lý & danh mục
-- Kể chuyện bằng dashboard
+**🔍 Hướng phân tích:**
+
+- 💰 KPI lõi: Doanh thu, số giao dịch, **AOV**
+- 🗺️ Cắt theo **vùng** (Bắc / Trung / Nam)
+- 📦 Cắt theo **danh mục** và **kênh**
+- 📅 Nhìn biến động theo tháng (gợi ý mùa vụ)
+- ✂️ Tách rõ **finding từ sample** vs **mục tiêu nếu triển khai**
+
 
 ---
 
@@ -69,27 +74,54 @@ Vietnam-SME-Sales-Dashboard/
 
 ---
 
-## 📊 Insight chính
+## 💡 Insight chính (có dẫn chứng từ sample)
 
 ### 1️⃣ Phân bố doanh thu theo vùng
 
-| Vùng | Đóng góp doanh thu | Nhận xét |
-|------|--------------------|----------|
-| Miền Nam | Cao nhất | Thị trường bão hòa |
-| Miền Bắc | Trung bình | Cạnh tranh cao |
-| **Miền Trung** | **Chỉ ~19%** | **Tiềm năng chưa khai thác** |
+| 🗺️ Vùng | 💰 Doanh thu (VND) | 📦 Số GD | 📊 Share | 🧾 AOV |
+|----------|--------------------|---------|:--------:|--------|
+| Miền Nam | ≈ 1.03 tỷ | 321 | **40.6%** | ≈ 3.21 tr |
+| Miền Bắc | ≈ 0.94 tỷ | 307 | **37.2%** | ≈ 3.07 tr |
+| **Miền Trung** | ≈ 0.56 tỷ | 172 | **22.1%** | ≈ 3.26 tr |
 
-→ Miền Trung có dân số đáng kể nhưng đóng góp doanh thu thấp → cơ hội mở rộng.
+💬 **Ý nghĩa:**
 
-### 2️⃣ Hiệu suất danh mục
+- Miền Nam dẫn đầu về share;  Miền Bắc đứng giữa.
+- **Miền Trung đóng góp thấp nhất (~22%)** dù **AOV không thấp** (thậm chí cao nhất trên sample) → vấn đề nghiêng về **số giao dịch / độ phủ**, không phải “bán được giá kém”.
+- Đây là lý do đề xuất **tăng focus marketing / phủ hàng Trung**, thay vì chỉ đổ thêm vào vùng đã chiếm share cao.
 
-- Một số danh mục mang lại AOV cao nhưng volume thấp.
-- Một số danh mục volume cao nhưng biên lợi nhuận thấp → cần tối ưu mix.
 
-### 3️⃣ Tính mùa vụ
 
-- Doanh thu có tính mùa vụ rõ (lễ Tết, back-to-school, cuối năm).
-- Cần kế hoạch tồn kho và marketing theo mùa.
+### 2️⃣ Hiệu suất theo danh mục
+
+| 📦 Category | 📊 Share DT | 🧾 AOV (xấp xỉ) |
+|-------------|:-----------:|-----------------|
+| Thực phẩm | 18.1% | 3.28 tr |
+| Gia dụng | 17.9% | 3.26 tr |
+| **Mỹ phẩm** | 17.4% | **3.40 tr** (cao hơn mặt bằng) |
+| Điện tử | 17.2% | 2.90 tr |
+| Thời trang | 16.3% | 3.23 tr |
+| Đồ chơi | 13.1% | 2.93 tr |
+
+💬 **Ý nghĩa:**
+
+- Mỹ phẩm: share khá và **AOV cao** → đáng ưu tiên đẩy nếu margin ổn.
+- Đồ chơi: share thấp hơn, AOV thấp hơn mặt bằng → cần xem lại tồn / push.
+- Không chỉ “bán nhiều hơn mọi thứ”: nên **siết product mix** theo AOV + khả năng bán.
+
+### 3️⃣ Kênh & tín hiệu thời gian
+
+**📣 Doanh thu theo kênh (sample):**
+
+| Kênh | Doanh thu (xấp xỉ) |
+|------|--------------------|
+| Facebook | 0.71 tỷ |
+| Shopee | 0.70 tỷ |
+| Online | 0.60 tỷ |
+| Offline | 0.53 tỷ |
+
+**📅 Theo tháng:** sample có các tháng doanh thu nổi (ví dụ 2024-05, 2025-06, 2024-11, 2025-01…) → có **biến động theo thời gian**, đủ để nhắc kế hoạch tồn kho / ads theo mùa (Tết, tựu trường, cuối năm) khi áp dụng thực tế.
+
 
 ---
 
@@ -111,15 +143,17 @@ Vietnam-SME-Sales-Dashboard/
 
 ## 📈 Tác động kỳ vọng
 
-| Chỉ số | Hiện tại | Mục tiêu (6–12 tháng) | Ghi chú |
-|--------|----------|-----------------------|---------|
-| Đóng góp Miền Trung | ~19% | 25–28% | Tăng trưởng vùng |
-| AOV | Baseline | +8–12% | Tối ưu mix |
-| Tốc độ ra quyết định | Chậm | Nhanh hơn rõ rệt | Nhờ dashboard |
+| 📌 Chỉ số | 📊 Hiện trạng (sample) | 🎯 Mục tiêu nếu triển khai | 🏷️ Loại |
+|-----------|------------------------|----------------------------|---------|
+| Share Miền Trung | **~22.1%** | **25–28%** | Target chiến lược |
+| AOV chung | **≈ 3.17 tr** | **+8–12%** nếu mix tốt hơn | Target chiến lược |
+| Tốc độ ra quyết định | Phụ thuộc file rời | Nhanh hơn nhờ 1 view chung | Vận hành |
+
 
 ---
 
-## 🖼️ Xem trước Dashboard
+## 🖼️  Dashboard
+
 
 <img width="2085" height="1479" alt="dashboard_preview" src="https://github.com/user-attachments/assets/233b2de3-5276-42fb-b1b7-3ef87a6a8687" />
 
@@ -164,7 +198,7 @@ Vietnam-SME-Sales-Dashboard/
 
 ## 👨‍💼 Về tôi
 
-**Tống Anh Đức** – Business Analyst Intern / Junior  
+**Tống Anh Đức** – Business Analyst Intern 
 
 📧 **Email:** [tongducne07062003@gmail.com](mailto:tongducne07062003@gmail.com)  
 💼 **LinkedIn:** [linkedin.com/in/tong-anh-duc](https://linkedin.com/in/tong-anh-duc)  
