@@ -2,7 +2,7 @@
 # 📈 Dashboard Doanh số SME Việt Nam
 
 > Dự án Portfolio: Data Analysis & Business Intelligence  
-> **Tống Anh Đức** | Business Analyst Intern / Junior  
+> **Tống Anh Đức** | Business Analyst Intern 
 > 📧 tongducne07062003@gmail.com  
 > 🔗 LinkedIn: linkedin.com/in/tong-anh-duc | GitHub: github.com/tongducne07062003-prog
 
