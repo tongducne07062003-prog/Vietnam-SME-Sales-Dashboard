@@ -23,7 +23,6 @@ Phân tích **bộ dữ liệu mô phỏng 800 giao dịch** bán lẻ SME:
 **Khuyến nghị:** Tăng focus **Miền Trung** (share thấp nhưng AOV không thấp); tối ưu **product mix**; xem dashboard **hàng tuần**.  
 Mục tiêu share Trung **25–28%** và AOV **+8–12%** là **kỳ vọng chiến lược**, chưa đo sau triển khai.
 
-> Data mô phỏng cho portfolio — không phải sổ sách shop thật.
 
 ---
 
